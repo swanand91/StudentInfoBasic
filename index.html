@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add User App</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial;
+        }
+
+        .box {
+            border: 2px solid #ccc;
+            padding: 20px;
+            border-radius: 8px;
+            width: 300px;
+            text-align: center;
+        }
+
+        input {
+            width: 80%;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 8px 15px;
+            margin-left: 5px;
+        }
+
+        ul {
+            margin-top: 15px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+<script>
+    // Main container
+    let box = document.createElement("div");
+    box.className = "box";
+
+    // Input
+    let input = document.createElement("input");
+    input.type = "text";
+    input.placeholder = "Enter user name";
+
+    // Add button
+    let addBtn = document.createElement("button");
+    addBtn.innerText = "Add";
+    addBtn.onclick = addUser;
+
+    // User list
+    let list = document.createElement("ol");
+
+    function addUser() {
+        if (input.value === "") return;
+
+        let li = document.createElement("li");
+        li.innerText = input.value;
+
+        list.appendChild(li);
+        input.value = "";
+    }
+
+    // Append everything
+    box.appendChild(input);
+    box.appendChild(addBtn);
+    box.appendChild(list);
+
+    document.body.appendChild(box);
+</script>
+
+</body>
+</html>
