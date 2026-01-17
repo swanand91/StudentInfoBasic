@@ -1,0 +1,2 @@
+# StudentInfoBasic
+Basic app
